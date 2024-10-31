@@ -301,9 +301,6 @@ flowchart LR
         end
     end
     subgraph namespace: app
-        subgraph pod: loadgen
-            LG((loadgen))
-        end
         subgraph pod: frontend
             LG --http--> F((frontend)) --metrics,traces--> OC
         end
