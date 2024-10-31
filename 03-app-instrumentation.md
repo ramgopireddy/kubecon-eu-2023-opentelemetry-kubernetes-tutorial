@@ -285,19 +285,11 @@ flowchart LR
         subgraph pod: collector
             OC{OTel Collector}
         end
-        subgraph pod: mimir
-            OC --metrics-->Mimir
-        end
         subgraph pod: loki
             OC --logs-->Loki
         end
         subgraph pod: tempo
             OC --traces-->Tempo
-        end
-        subgraph pod: grafana
-            grafana-.->Mimir
-            grafana-.->Loki
-            grafana-.->Tempo
         end
     end
     subgraph namespace: app
