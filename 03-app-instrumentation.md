@@ -32,10 +32,7 @@ sequenceDiagram
     frontend->>backend1: /rolldice?player=bob
     frontend->>backend2: /rolldice?player=alice
     backend1-->>frontend: 3
-    frontend-->>loadgen: bob rolls: 3
     backend2-->>frontend: 6
-    frontend-->>loadgen: alice rolls: 6
-    frontend-->>loadgen: alice wins
 ```
 
 ## Manual or Automatic Instrumentation?
