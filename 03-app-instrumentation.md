@@ -29,7 +29,6 @@ Additionally there is a `loadgen` service, which utilizes `curl` to periodically
 
 ```mermaid
 sequenceDiagram
-    loadgen->>frontend: /?player1=bob&player2=alice
     frontend->>backend1: /rolldice?player=bob
     frontend->>backend2: /rolldice?player=alice
     backend1-->>frontend: 3
