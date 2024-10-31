@@ -281,7 +281,7 @@ How everything should look like after running through the previous steps:
 ```mermaid
 
 flowchart LR
-    subgraph namespace: observability-backend
+    subgraph namespace: lokistack
         subgraph pod: collector
             OC{OTel Collector}
         end
@@ -294,13 +294,13 @@ flowchart LR
     end
     subgraph namespace: app
         subgraph pod: frontend
-            LG --http--> F((frontend)) --metrics,traces--> OC
+            F((frontend)) --traces--> OC
         end
         subgraph pod: backend1
-            F --http--> B1((backend1)) --metrics,traces--> OC
+            F --http--> B1((backend1)) --traces--> OC
         end
         subgraph pod: backend2
-            F --http--> B2((backend2)) --logs,metrics,traces--> OC
+            F --http--> B2((backend2)) --traces--> OC
         end
     end
 ```
